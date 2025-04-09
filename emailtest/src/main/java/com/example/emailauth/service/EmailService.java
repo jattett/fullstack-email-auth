@@ -17,7 +17,7 @@ public class EmailService {
     @PostConstruct
     public void init() {
         // 네이버 계정 그대로
-        this.fromAddress = "your_naver_id@naver.com";
+        this.fromAddress = "gnto2000@naver.com";
     }
 
     public void sendVerificationEmail(String to, String token) {
@@ -30,11 +30,11 @@ public class EmailService {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
-        message.setFrom(fromAddress); // ✅ 추가
+        message.setFrom(fromAddress); 
         message.setSubject(subject);
         message.setText(text);
 
         mailSender.send(message);
-        System.out.println("✅ 이메일 전송 완료: " + to);
+        System.out.println(" 이메일 전송 완료: " + to);
     }
 }
